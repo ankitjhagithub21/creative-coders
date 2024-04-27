@@ -24,18 +24,20 @@ const sendMessage = async (req, res) => {
         })
     }
 }
-// const getAllMessage = async(req,res) =>{
-//     try{
-//         const userId = req.params.userId
+const getAllMessage = async(req,res) =>{
+    try{
+       const messages = await Contact.find()
+       res.json(messages)
 
-//     }catch(error){
-//         res.status(500).json({
-//             success:false,
-//             message:error.message
-//         })
-//     }
-// }
+    }catch(error){
+        res.status(500).json({
+            success:false,
+            message:error.message
+        })
+    }
+}
 
 module.exports = {
-    sendMessage
+    sendMessage,
+    getAllMessage
 }

@@ -6,6 +6,6 @@ const serviceRouter = express.Router()
 
 serviceRouter.post("/add",verifyToken,addService)
 serviceRouter.delete("/delete/:serviceId",verifyToken,deleteService)
-serviceRouter.get("/",verifyToken,getAllServices)
+serviceRouter.get("/",getAllServices)
 
 module.exports = serviceRouter
